@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const PORT = 3000;
@@ -80,7 +82,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/hotelBooking");
+  await mongoose.connect(process.env.MONGODB_URI);
 }
 
 
@@ -138,5 +140,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on ${PORT}`);
 });
