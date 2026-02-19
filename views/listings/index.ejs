@@ -1,0 +1,33 @@
+<%- layout("/layouts/boilerplate.ejs")%>
+
+<body>
+  <h2>Listings</h2>
+
+  <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 g-4">
+    <% for (let item of listings) { %>
+    <a
+      href="/listings/<%= item._id %>"
+      class="card-link text-decoration-none text-dark"
+    >
+      <div class="card h-100 card-list" style="width: 100%">
+        <img
+          src="<%= item.image %>"
+          class="card-img-top"
+          alt="listing_image"
+          style="height: 20rem; object-fit: cover"
+        />
+        <div class="card-img-overlay">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= item.title %></b><br />
+
+            &#8377; <%= item.price.toLocaleString('en-IN') %>/night
+          </p>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+</body>

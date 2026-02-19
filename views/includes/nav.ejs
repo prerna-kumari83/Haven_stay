@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
+  <div class="container-fluid nav-button">
+    <a class="navbar-brand" href="/listings"
+      ><i class="fa-regular fa-compass"></i
+    ></a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+
+        <a class="nav-link" href="/listings"> 📋Listings</a>
+
+        <a class="nav-link" href="/listings/new">New➕</a>
+      </ul>
+    </div>
+
+    <div class="d-flex gap-2 nav-button">
+      <% if(!currUser){%>
+      <form action="/login" method="GET">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <form action="/signup" method="GET">
+        <button type="submit" class="btn btn-primary">Signup</button>
+      </form>
+      <% }%> <% if(currUser){%>
+
+      <form action="/logout" method="GET">
+        <button type="submit" class="btn btn-primary">Logout</button>
+      </form>
+      <% } %>
+    </div>
+  </div>
+</nav>
