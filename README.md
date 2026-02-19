@@ -1,16 +1,18 @@
 # Haven Stay 🏨
 
-A modern hotel booking application designed to simplify reservations and enhance user experience. Built with **Node.js**, **Express**, **React**, and **MongoDB**, it provides a full-stack solution for managing hotels, rooms, and bookings.
+A hotel booking application built with **Node.js**, **Express**, and **EJS templates**. It provides a backend-driven solution for managing hotel reservations, user authentication, and dynamic content rendering. The project uses MongoDB for data storage and Passport.js for secure authentication.
 
 ---
 
 ## ✨ Features
-- 🔐 **User Authentication** – Secure login and registration with JWT.
+- 🔐 **User Authentication** – Secure login and signup with Passport.js and session management.
 - 🏨 **Hotel & Room Management** – Add, update, and manage hotel listings.
-- 📅 **Booking System** – Real-time room availability and booking confirmation.
-- 💳 **Payment Integration** – Support for online payments.
-- 📱 **Responsive UI** – Optimized for desktop and mobile devices.
-- ⚙️ **Role-based Authorization** – Admins, hotel managers, and customers have distinct access levels.
+- 📅 **Booking System** – Reserve rooms with real-time availability.
+- 🎨 **EJS Templating** – Dynamic server-side rendering with layouts using `ejs-mate`.
+- 📂 **File Uploads** – Upload images with Multer.
+- ⚙️ **Validation** – Robust input validation using Joi.
+- 🔄 **Method Override** – Support for PUT/DELETE in forms.
+- 📢 **Flash Messages** – User-friendly alerts with `connect-flash`.
 
 ---
 
@@ -22,28 +24,11 @@ git clone https://github.com/prerna-kumari83/Haven_stay.git
 cd Haven_stay
 ```
 
-Install dependencies:
-```bash
-npm install
-```
 
----
-
-## ▶️ Usage
-
-Start the backend server:
-```bash
-npm run server
-```
-
-Start the frontend:
-```bash
-npm start
-```
 
 Visit:
 ```
-http://localhost:3000
+http://localhost:3000/listings
 ```
 
 ---
@@ -54,8 +39,7 @@ Create a `.env` file in the root directory with:
 ```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-PAYMENT_API_KEY=your_payment_gateway_key
+SESSION_SECRET=your_secret_key
 ```
 
 ---
@@ -63,12 +47,29 @@ PAYMENT_API_KEY=your_payment_gateway_key
 ## 📂 Project Structure
 ```
 Haven_stay/
-│── backend/        # Express server, routes, models
-│── frontend/       # React components, pages, styles
+│── views/          # EJS templates
+│── public/         # Static assets (CSS, JS, images)
+│── routes/         # Express routes
+│── models/         # Mongoose models
+│── app.js          # Main server file
 │── package.json
 │── .gitignore
 │── README.md
 ```
+
+---
+
+## 📦 Dependencies
+- **express** – Web framework
+- **ejs / ejs-mate** – Templating engine
+- **mongoose** – MongoDB ODM
+- **passport / passport-local / passport-local-mongoose** – Authentication
+- **express-session** – Session management
+- **connect-flash** – Flash messages
+- **multer** – File uploads
+- **joi** – Input validation
+- **method-override** – HTTP method override
+- **nodemon** – Development server auto-restart
 
 ---
 
@@ -81,18 +82,8 @@ Haven_stay/
 
 ---
 
-## 📜 License
-This project is licensed under the MIT License.
-
----
 
 ## 🙌 Acknowledgments
-- MERN stack community
-- Open-source libraries used in the project
-- Inspiration from modern hotel booking platforms
-
----
-
-👉 This README gives your repo a **professional look** and makes it easy for others (or recruiters) to understand and run your project.  
-
-Would you like me to also add **badges** (like build status, license, or npm version) and maybe a **screenshot section** so your README looks even more polished on GitHub?
+- Built with **Node.js + Express + EJS**
+- Inspired by modern hotel booking platforms
+- Thanks to open-source contributors and libraries
