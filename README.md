@@ -31,16 +31,8 @@ Visit:
 http://localhost:3000/listings
 ```
 
----
 
-## ⚙️ Configuration
 
-Create a `.env` file in the root directory with:
-```
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-SESSION_SECRET=your_secret_key
-```
 
 ---
 
