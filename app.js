@@ -1,4 +1,4 @@
-require("doten").config();
+require("dotenv").config();
 
 const express = require("express");
 const app = express();
@@ -140,5 +140,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
