@@ -83,8 +83,8 @@ main()
 
 async function main() {
   await mongoose.connect(process.env.MONGODB_URI);
+ 
 }
-
 
 // app.use("/api", (req, res, next) => {
 //   let { token } = req.query;
