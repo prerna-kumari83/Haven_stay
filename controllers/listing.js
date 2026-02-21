@@ -27,8 +27,13 @@ module.exports.showListing=async (req, res) => {
     }
 
     module.exports.createListing=async (req, res, next) => {
+      console.log(req.body);
+      console.log(req.file);
         const listing = new Listing(req.body.listings);
         listing.owner=req.user._id;
+         if (req.file) {
+    listing.image = req.file.path;   // 👈 SAVE IMAGE PATH
+  }
         
         await listing.save();
         req.flash("success","listing is add");

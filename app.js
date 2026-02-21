@@ -73,7 +73,19 @@ app.use((req, res, next) => {
 
 const Listing = require("./models/listing");
 const Review = require("./models/review.js");
+const multer = require("multer");
+app.use("/uploads",express.static("uploads"));
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage });
 
 main()
   .then(() => {

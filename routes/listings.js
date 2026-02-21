@@ -6,12 +6,18 @@ const listingControllers = require("../controllers/listing.js");
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
+const path = require("path");
+
+
+
+
 // Routes for "/" and "/new"
 // GET / and POST /
 router.route("/")
   .get(wrapAsync(listingControllers.index))
   .post(
     isLoggedIn,
+    upload.single("listings[image]"),
     validateListing,
     wrapAsync(listingControllers.createListing)
   );
