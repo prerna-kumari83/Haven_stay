@@ -3,13 +3,15 @@ const router = express.Router();
 const wrapAsync = require("../util/wrapAsync.js");
 const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 const listingControllers = require("../controllers/listing.js");
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
+
+
 
 const path = require("path");
 
 
-
+const multer = require("multer");   // ✅ ADD THIS
+const { storage } = require("../cloudConfig/cloudinary.js");
+const upload = multer({ storage });
 
 // Routes for "/" and "/new"
 // GET / and POST /
