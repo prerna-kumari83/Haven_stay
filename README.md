@@ -1,7 +1,10 @@
 # Haven Stay 🏨
 
 A hotel booking application built with **Node.js**, **Express**, and **EJS templates**. It provides a backend-driven solution for managing hotel reservations, user authentication, and dynamic content rendering. The project uses MongoDB for data storage and Passport.js for secure authentication.
+---
+## 📸 Preview
 
+![home Preview](hotel.jpeg)
 ---
 
 ## ✨ Features
