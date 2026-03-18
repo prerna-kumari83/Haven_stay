@@ -18,7 +18,16 @@ A hotel booking application built with **Node.js**, **Express**, and **EJS templ
 - 📢 **Flash Messages** – User-friendly alerts with `connect-flash`.
 
 ---
+## 📸 Login
 
+![Login Preview](login.jpeg)
+
+---
+## 📸 Review
+
+![review Preview](review.jpeg)
+![all_review Preview](all_review.jpeg)
+---
 ## 🚀 Installation
 
 Clone the repository:
